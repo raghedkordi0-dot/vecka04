@@ -6,3 +6,20 @@ jag körde därefter show interfaces trunk på både switcharna och och vlan 30 
 när jag ändrade native vlan från 999 till 1 på ena switchen och behåll vlan 999 på den andra switchen fick jag varningen för NATIVE_VLAN_MISMATCH. det beror på att trunkportarna måste ha samma native vlan i både ändarna.
 i steg 6- jag ändrade tillbaka native vlan 1 till native vlan 999 visar loggan ingenting vilket betyder att mismatchen försvann.
 i steg -7 körde show spanning-tree vlan 30 på både switcharna. sw-nordvik 1 var root bridge för vlan 30. både switcharna hade samma STP priority så mac-addressen var avgörande för sw-nordvik 1 hade lägre mac-address och valdes därför automatiskt till root bridge.
+
+## tisdag
+jag går igenom python i boken och kontrollfrågorrna:
+
+4.20 [typ 7 • Återblick] Räkna ut nätadress, broadcast och adressintervall för
+192.168.1.128/26. (Kapitel 3)
+blocksteget är 64
+nätaddressen är 192.168.1.128
+broadcast addressen är 192.168.1.191
+antal tillgängliga addresser 62 för nät och broadcast addresser är reserverade.
+tillgängliga addresser 192.168.1.129-190
+
+4.21 [typ 7 • Återblick] Vad betyder adressen FF:FF:FF:FF:FF:FF, och vad gör switchen med en ram som har den som mottagare? (Kapitel 2)
+det betyder att det är broadcast och switchen skicka ramen genom alla portar utom den porten ramen kom in på.
+
+4.22 [typ 7 • Återblick] Vilken kolumn i show mac address-table avslöjar att en port ligger i fel nät? (Kapitel 2)
+kolmunen vlan.

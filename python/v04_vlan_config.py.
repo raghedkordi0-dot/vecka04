@@ -1,0 +1,12 @@
+def vlan_config(number, name):
+
+    rader = []
+    rader.append(f"vlan {number}")
+    rader.append(f" name {name}")
+    return rader
+
+for nummer in range(1,41):
+    namn = f"NAT{nummer:02}"
+
+    for rad in vlan_config(nummer, namn):
+        print(rad)
